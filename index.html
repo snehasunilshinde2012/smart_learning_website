@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Smart Learning System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">✦</div>
+    <div>
+      <div class="brand">SmartLearn AI</div>
+      <div class="tagline">Student Learning Pattern Analysis</div>
+    </div>
+    <span class="status"><span class="dot"></span> Learning assistant</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">PERSONALIZED LEARNING</div>
+      <h1>Understand your learning.<br><span>Improve your results.</span></h1>
+      <p>Enter your study details to receive a performance summary and a practical learning recommendation.</p>
+      <div class="feature-row">
+        <div class="feature"><span class="feature-icon">◈</span><div><b>Pattern analysis</b><small>Marks, study time & attendance</small></div></div>
+        <div class="feature"><span class="feature-icon">↗</span><div><b>Actionable tips</b><small>Suggestions for your next step</small></div></div>
+      </div>
+      <div class="note"><span>ⓘ</span> This student project uses rule-based logic inspired by AI. It is not a trained machine-learning model.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><div class="eyebrow">STUDENT DASHBOARD</div><h2>Learning analysis</h2></div>
+        <div class="sparkle">✦</div>
+      </div>
+      <form id="learningForm">
+        <label for="studentName">Student name</label>
+        <input id="studentName" name="studentName" type="text" placeholder="e.g. Sneha" maxlength="50" required>
+
+        <div class="field-grid">
+          <div>
+            <label for="marks">Marks <span>(0–100)</span></label>
+            <input id="marks" name="marks" type="number" min="0" max="100" placeholder="85" required>
+          </div>
+          <div>
+            <label for="studyHours">Daily study hours <span>(0–24)</span></label>
+            <input id="studyHours" name="studyHours" type="number" min="0" max="24" step="0.5" placeholder="3.5" required>
+          </div>
+        </div>
+
+        <div class="range-label">
+          <label for="attendance">Attendance percentage</label>
+          <output id="attendanceValue" for="attendance">80%</output>
+        </div>
+        <input id="attendance" name="attendance" type="range" min="0" max="100" value="80">
+        <div class="range-scale"><span>0%</span><span>100%</span></div>
+
+        <button type="submit">Analyze my learning <span>→</span></button>
+      </form>
+
+      <div id="result" class="result hidden" aria-live="polite">
+        <div class="result-top">
+          <div><div class="eyebrow">YOUR RESULT</div><h3 id="resultTitle">Performance summary</h3></div>
+          <span id="resultIcon" class="result-icon">✦</span>
+        </div>
+        <p id="resultGreeting" class="result-greeting"></p>
+        <div class="metrics">
+          <div><span>Marks</span><b id="outMarks">—</b></div>
+          <div><span>Study time</span><b id="outHours">—</b></div>
+          <div><span>Attendance</span><b id="outAttendance">—</b></div>
+        </div>
+        <div class="recommendation">
+          <div class="recommendation-icon">✧</div>
+          <div><b>Your learning recommendation</b><p id="recommendationText"></p></div>
+        </div>
+        <button type="button" class="secondary" id="resetButton">Analyze another student</button>
+      </div>
+      <div class="panel-footer"><span>🔒</span> Your entries are analyzed in this browser and are not uploaded.</div>
+    </section>
+  </main>
+  <footer>SmartLearn AI · Student project prototype</footer>
+  <script src="script.js"></script>
+</body>
+</html>
